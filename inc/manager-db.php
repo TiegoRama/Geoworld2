@@ -59,6 +59,17 @@ function getcapital($id)
     return $prep->fetch()->Name;
 }
 }
+function getcode2($code2)
+{ if (!empty($code2)){
+    global $pdo;
+    $query = 'SELECT Code2  FROM Country WHERE Code2 = :Code2;';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':Code2', $code2, PDO::PARAM_STR);
+    $prep->execute();
+    return $prep->fetch()->Name;
+}
+}
+
 
 /**
  * Obtenir la liste des pays

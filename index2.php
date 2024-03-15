@@ -40,7 +40,8 @@ if(isset($_GET['continent'])){
     <div>
      <table class="table">
          <tr>
-          <th>ID</th>
+         <th>Drapeau</th>
+         <th>ID</th>
           <th>Nom</th>
           <th>Population</th>
           <th>Continent</th>
@@ -50,6 +51,7 @@ if(isset($_GET['continent'])){
        
        foreach($desPays as $pays){ ?>
           <tr>
+            <td> <img src="images/drapeau/<?php echo strtolower($pays->Code2);?>.png"></td>
             <td> <?php echo $pays->id ?></td>
             <td> <?php echo $pays->Name ?></td>
             <td> <?php echo $pays->Population ?></td>
