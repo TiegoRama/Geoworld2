@@ -53,10 +53,10 @@ if(isset($_GET['continent'])){
           <tr>
             <td> <img src="images/drapeau/<?php echo strtolower($pays->Code2);?>.png"></td>
             <td> <?php echo $pays->id ?></td>
-            <td> <?php echo $pays->Name ?></td>
+            <td> <a href="pays.php?id=<?php echo ($pays->id); ?>"><?php echo $pays->Name ?></a></td>           
             <td> <?php echo $pays->Population ?></td>
             <td> <?php echo $pays->Continent ?></td>
-            <td> <?php if (!empty($pays->Capital)){echo $pays -> Capital;} else {echo "Pas de capitale";}?></td>
+            <td> <?php echo getcapital($pays->Capital)?></td>
           
           </tr>
         <?php  }?>
